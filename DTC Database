@@ -1,0 +1,15 @@
+var object1 = new Object();
+object1.code = 0300;
+object1.define = "Misfire: Random Cylinder";
+var object2 = new Object();
+object2.code = 0301;
+object2.define = "Misfire: Cylinder 1";
+var object3 = new Object();
+object3.code = 0302;
+object3.define = "Misfire: Cylinder 2";
+var object4 = new Object();
+object4.code = 0303;
+object4.define = "Misfire: Cylinder 3";
+var object5 = new Object();
+object5.code = 0304;
+object5.define = "Misfire: Cylinder 4";
