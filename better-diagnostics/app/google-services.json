@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1023351599998",
+    "firebase_url": "https://better-diagnostics.firebaseio.com",
+    "project_id": "better-diagnostics",
+    "storage_bucket": "better-diagnostics.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1023351599998:android:23f7774d44b6e5bb",
+        "android_client_info": {
+          "package_name": "com.thedufresnegroup.adufres.betterdiagnostics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1023351599998-m28avttb6j86im07bnq1td9plsan66bc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thedufresnegroup.adufres.betterdiagnostics",
+            "certificate_hash": "9707ca9d791f6f843c4b49781f6b634dc9131a02"
+          }
+        },
+        {
+          "client_id": "1023351599998-a4cbs253f4r3tah68nl52rmon4qikcdu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATjXIAgnVAsO0OJWm0QNnKJ87Z-lvYN_M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1023351599998-a4cbs253f4r3tah68nl52rmon4qikcdu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
