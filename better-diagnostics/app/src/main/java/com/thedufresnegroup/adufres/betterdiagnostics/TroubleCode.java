@@ -1,9 +1,17 @@
 package com.thedufresnegroup.adufres.betterdiagnostics;
 
 public class TroubleCode {
+    private String category;
     private String code;
-    private String name;
-    private String description;
+    private String desc;
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
     public String getCode() {
         return code;
@@ -13,35 +21,21 @@ public class TroubleCode {
         this.code = code;
     }
 
-    public String getName() {
-        return name;
+    public String getDesc() {
+        return desc;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public TroubleCode(String code, String name, String description) {
+    public TroubleCode(String category, String code, String desc) {
+        this.category = category;
         this.code = code;
-        this.name = name;
-        this.description = description;
+        this.desc = desc;
     }
+
     public TroubleCode() {}
 
-    @Override
-    public String toString() {
-        return "TroubleCode{" +
-                "code='" + code + '\'' +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
-    }
+
 }

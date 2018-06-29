@@ -1,11 +1,8 @@
 package com.thedufresnegroup.adufres.betterdiagnostics;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
@@ -13,14 +10,13 @@ import android.widget.ListView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
     private ListView mainListView;
-    private Query mDatabase;
+    private DatabaseReference mDatabase;
     private ArrayAdapter<String> listAdapter ;
 
     @Override
@@ -28,18 +24,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        mDatabase = FirebaseDatabase.getInstance().getReference().getParent().orderByValue();
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("TroubleCode");
         // Find the ListView resource.
-        mainListView = (ListView) findViewById( R.id.mainListView );
+        mainListView = findViewById( R.id.mainListView );
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         ArrayList<String> codeList = new ArrayList<String>();
-        codeList.addAll(Arrays.asList(mDatabase.endAt("P0304").toString()));
+        codeList.addAll(Arrays.asList(mDatabase.toString()));
 
-        // Create ArrayAdapter using the planet list.
-        listAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, codeList);
+        // Create ArrayAdapter using the TroubleCode list.
+        listAdapter = new ArrayAdapter<>(this, R.layout.simplerow, codeList);
         // Set the ArrayAdapter as the ListView's adapter.
         mainListView.setAdapter( listAdapter );
     }
