@@ -1,10 +1,13 @@
 package com.thedufresnegroup.adufres.betterdiagnostics;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -20,7 +23,7 @@ import java.util.ArrayList;
    available to read and then click each code to view more detailed
    information about each code
 */
-public class MainActivity extends AppCompatActivity {
+public class MainListActivity extends AppCompatActivity {
     private ListView mainListView;
     private DatabaseReference dbRef;
     private ArrayAdapter<String> listAdapter ;
@@ -63,13 +66,24 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("The read failed: " + databaseError.getMessage());
             }
         });
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         /*
             I still need to add action for when you click on a listView
             item to take you to a detailed view of that trouble code and
             have it display all of the information
         */
+        mainListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent details = new Intent(MainListActivity.this, DetailedCodeActivity.class);
+                System.out.print(position);
+                startActivity(details);
+            }
+        });
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+
     }
 
     @Override
