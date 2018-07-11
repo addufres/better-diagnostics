@@ -28,7 +28,9 @@ public class MainListActivity extends AppCompatActivity {
     private DatabaseReference dbRef;
     private ArrayAdapter<String> listAdapter ;
     private ArrayList<String> codeList = new ArrayList<>();
+    private TroubleCode tc = new TroubleCode();
 
+    DetailedCodeActivity dca = new DetailedCodeActivity();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +50,8 @@ public class MainListActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                     //Getting the data from snapshot
-                    TroubleCode tc = postSnapshot.getValue(TroubleCode.class);
+                    tc = postSnapshot.getValue(TroubleCode.class);
+                    dca.addTcSet(tc);
                     //Adding it to a string
                     String code = tc.getCode();
                     codeList.add(code);
@@ -76,6 +79,7 @@ public class MainListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent details = new Intent(MainListActivity.this, DetailedCodeActivity.class);
+//                details.;
                 System.out.print(position);
                 startActivity(details);
             }
